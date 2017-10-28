@@ -8,46 +8,66 @@
 	<script src="jquery.js"></script>
 	<script src="jquerycol.js"></script>
 	<script src="bootstrap.js"></script>
+
+
+  <style type="text/css">
+ .topcorner{
+   position:absolute;
+   top:0;
+   right:0;
+  }
+ul#menu li {
+    display:inline;
+}
+</style>
+
 </head>
+
+
 <body>
 
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dashboard</button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul>
+<div class="topcorner">
+  <table style="padding:100px">
+    <tr>
+      <th>Account</th>
+    </tr>
+  </table>
 </div>
 
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Plicks</button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul>
-</div>
+<ul id="menu">
+  <li>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">General</button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
+  </li>
 
+  <li>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Plicks</button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Plick 1</a></li>
+      <li><a href="#">Plick 2</a></li>
+      <li><a href="#">Plick 3</a></li>
+    </ul>
+  </div>
+  </li>
 
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">General Information</button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul>
-</div>
-
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Job Search</button>
-  <ul class="dropdown-menu">
-    <li><a href="#">HTML</a></li>
-    <li><a href="#">CSS</a></li>
-    <li><a href="#">JavaScript</a></li>
-  </ul>
-</div>
-
+  <li>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Job Search</button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Internships</a></li>
+      <li><a href="#">Full-Time Jobs</a></li>
+      <li><a href="#">Part-Time Jobs</a></li>
+    </ul>
+  </div>
+  </li>
+</ul>
 
 </body>
 </html>
