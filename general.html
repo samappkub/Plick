@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>General Info</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="font-awesome.css">
+	<script src="jquery.js"></script>
+	<script src="jquerycol.js"></script>
+	<script src="bootstrap.js"></script>
+</head>
+<body>
+
+<div class="form-container">
+<h1> General Info </h1>
+<p>First Name *</p>
+<input class="input__text" type="text" name="first_name">
+
+<p>Last Name *</p>
+<input class="input__text" type="text" name="last_name">
+
+<p>Email *</p>
+<input class="input__text" type="text" name="email">
+
+<p>Phone *</p>
+<input class="input__text" type="text" name="phone_number">
+
+<p>Are you currently authorized to work in the United States? *</p>
+<select class="input__select" name="work_authorization">
+    <option value="" selected></option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+</select>
+
+<p>Will your current authorization require renewal by your emplyer? *</p>
+<select class="input__select" name="authorization_renewal">
+    <option value="" selected></option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+</select>
+</div>
+</body>
+<style>
+.form-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1080px;
+    width: 60%;
+}
+
+.form-required {
+  color: #746171;
+}
+</style>
+</html>
