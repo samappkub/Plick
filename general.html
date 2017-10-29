@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>General Info</title>
+	<title>General</title>
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="bootstrap.css">
 	<link rel="stylesheet" href="font-awesome.css">
 	<script src="jquery.js"></script>
 	<script src="jquerycol.js"></script>
 	<script src="bootstrap.js"></script>
+
+	<script>
+	$(document).ready(function(){}
+	$("#addJob").click(function () {
+  $("#container").append('<p>Previous Job Name</p><input class="input__text" type="text"><p>Base Compensation</p><input class="input__text" type="text"><br><br>');
+		});
+	});
+	</script>
+
+
+
+
 </head>
 <body style="background-color:#1557c1">
 <button name="logout" id="button">Logout</button>
@@ -19,7 +31,7 @@
 	    <div class="dropdown">
 	      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Plicks</button>
 	      <ul class="dropdown-menu">
-	        <li><a href="#">Here is where you can see all of your Plicks. <br>Click on Job Search to get started on your first one!</a></li>
+	        <li><a href="#">Here is where you can see all of your Plicks.<br>Click on Job Search to get started on your first one!</a></li>
 	      </ul>
 	    </div>
 	    </li>
@@ -46,6 +58,26 @@
 <input class="input__text" type="text" name="phone_number">
 <br>
 <br>
+<p>Country *</p>
+<input class="input__text" type="text" name="phone_number">
+<br>
+<br>
+<p>Address *</p>
+<input class="input__text" type="text" name="phone_number">
+<br>
+<br>
+<p>City *</p>
+<input class="input__text" type="text" name="phone_number">
+<br>
+<br>
+<p>State/Province *</p>
+<input class="input__text" type="text" name="phone_number">
+<br>
+<br>
+<p>Zip/Postal Code *</p>
+<input class="input__text" type="text" name="phone_number">
+<br>
+<br>
 <p>Are you currently authorized to work in the United States? *</p>
 <select class="input__select" name="work_authorization">
     <option value="" selected>- select -</option>
@@ -60,6 +92,28 @@
         <option value="0">No</option>
         <option value="1">Yes</option>
 </select>
+</div>
+<hr>
+<div class="form-container" style="background-color:#5b90e5; padding:5pt">
+	<h1>Information</h1>
+	<p>Previous Job Title</p>
+	<input class="input__text" type="text" name="first_name">
+	<p>Base Compensation</p>
+	<input class="input__text" type="text" name="first_name">
+	<p>Responsibilities</p>
+	<input class="textBox" type="text" name="first_name">
+	<br>
+	<br>
+	<button id="addJob">Add Work Experience</button>
+	<br>
+	<br>
+	<div id="container"></div>
+	<p>Degree</p>
+	<input class="input__text" type="text" name="first_name">
+	<p>Have you completed this degree or is it still in progress?</p>
+	<input class="input__text" type="text" name="first_name">
+	<p>How did you find out about this position</p>
+	<input class="input__text" type="text" name="first_name">
 </div>
 <hr>
 <div class="form-container" style="background-color:#5b90e5; padding:5pt">
@@ -185,6 +239,11 @@ p {
 		font-weight: bold;
 		font-size: 20 pt;
 		color:white;
+}
+.textBox{
+	width: 100 pt;
+	height: 50 pt;
+	border-radius: 5px;
 }
 </style>
 </html>
