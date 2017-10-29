@@ -50,7 +50,7 @@
         createUserTable($email);
         ?>
         <script>
-          window.location = "HomePage.html"; //put in the login file name
+          window.location = "general.html"; //put in the login file name
         </script>
         <?php
       };
@@ -64,7 +64,7 @@
         if(bringUser($_POST["email_log"], $_POST["pass_log"])) {
             ?>
             <script>
-              window.location = "HomePage.html";
+              window.location = "general.html";
             </script>
             <?php
         }
