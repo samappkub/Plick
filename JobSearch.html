@@ -21,6 +21,9 @@
     #searchBox{
       width: 50%;
       margin: 0 auto;
+			padding: 20pt 20pt 0pt 20pt;
+			background-color: white;
+			border-radius: 20px;
     }
     .searchResults{
       width: 70%;
@@ -33,20 +36,21 @@
       width: 60%;
     }
     #button {
-        line-height: 20px;
-        width: 20 pt;
-        font-family: tahoma;
-        margin-top: 1px;
-        margin-right: 2px;
-        position: absolute;
-        top: 0;
-        right: 0;
-    		border-radius: 2pt;
-    		background-color: #337ab7;
-    		border: 0pt;
-    		font-weight: bold;
-    		font-size: 20 pt;
-    		color:white;
+			line-height: 20px;
+			width: 20 pt;
+			font-family: tahoma;
+			margin-top: 1px;
+			margin-right: 2px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			border-radius: 5pt;
+			background-color: #337ab7;
+			border: 0pt;
+			font-weight: bold;
+			font-size: 20 pt;
+			color:white;
+			padding: 10pt;
     }
   </style>
   <script>
@@ -83,7 +87,7 @@
 What job do you want?
 </div>
 <div class="input-group" id="searchBox">
-  <ul style="list-style: none;">
+  <ul style="list-style: none; padding-left: 0; list-style-type:none;">
     <li><input type="text" class="form-control" placeholder="Job Title, Keywords, or Company Name" name="srch-term" id="srch-term"></li>
     <li><input type="text" class="form-control" placeholder="Location (or hit search to see jobs anywhere)" name="srch-term" id="srch-term"></li>
 
