@@ -11,24 +11,35 @@
 
 	<script>
 	$(document).ready(function(){
-	$("#jobButton").click(function () {
-  $("#container").append('<div id="temp"><p>Current Job Position *</p><input class="input__text" type="text" name="phone_number"><br><br><p>Pay *</p><input class="input__text" type="text" name="phone_number"><br><br><p>Responsibilities *</p><textarea name="paragraph_text" cols="100" rows="10"></textarea><br><br></div>');
+	var jobCount=1;
+	var skillCount=1;
+
+		$("#jobButton").click(function () {
+			if (jobCount < 3) {
+				jobCount++;
+  	$("#container").append('<div id="temp"><p>Current Job Position *</p><input class="input__text" type="text" name="' + "current_position" + jobCount + '"><br><br><p>Pay *</p><input class="input__text" type="text" name="'+ "current_pay" + jobCount + '"><br><br><p>Start Date</p><input name="' + "start_date" + jobCount + '" class="input__text" type="date"><p>End Date</p><input name="' +"end_date"+jobCount+'" class="input__text" type="date"><br><br><p>Responsibilities *</p><textarea name="' + "respon" + jobCount + '" cols="100" rows="10"></textarea><br><br></div>');
+			}
 		});
 	$("#removeJob").click(function () {
 	$("#temp").remove();
+	if (jobCount > 1)
+		jobCount--;
 		});
 
 	$("#addSkill").click(function () {
-	$("#Skillcontainer").append('<div id="tempSkill"><p>Skills *</p><input style="width:200pt;" class="input__text" type="text" name="phone_number"><br><br></div>');
-		});
+	if (skillCount < 5) {
+		skillCount++;
+		$("#Skillcontainer").append('<div id="tempSkill"><p>Skills *</p><input style="width:200pt;" class="input__text" type="text" name="' + "skill" + skillCount + '"><br><br></div>');
+	}
+	});
+
 	$("#removeSkill").click(function () {
+		if (skillCount > 1)
+			skillCount--;
 	$("#tempSkill").remove();
 		});
 	});
 	</script>
-
-
-
 
 </head>
 <body style="background-color:#1557c1">
@@ -56,7 +67,7 @@
 <br>
 <br>
 <p>Email *</p>
-<input class="input__text" type="text" name="email">
+<input class="input__text" type="text" name="email"> <!-- will be autopulated-->
 <br>
 <br>
 <p>Phone *</p>
@@ -64,23 +75,23 @@
 <br>
 <br>
 <p>Country *</p>
-<input class="input__text" type="text" name="phone_number">
+<input class="input__text" type="text" name="country">
 <br>
 <br>
 <p>Address *</p>
-<input class="input__text" type="text" name="phone_number">
+<input class="input__text" type="text" name="address">
 <br>
 <br>
 <p>City *</p>
-<input class="input__text" type="text" name="phone_number">
+<input class="input__text" type="text" name="city">
 <br>
 <br>
 <p>State/Province *</p>
-<input class="input__text" type="text" name="phone_number">
+<input class="input__text" type="text" name="state">
 <br>
 <br>
 <p>Zip/Postal Code *</p>
-<input class="input__text" type="text" name="phone_number">
+<input class="input__text" type="text" name="postal_code">
 <br>
 <br>
 <p>Are you currently authorized to work in the United States? *</p>
@@ -91,7 +102,7 @@
 </select>
 <br>
 <br>
-<p>Will your current authorization require renewal by your emplyer? *</p>
+<p>Will your current authorization require renewal by your employer? *</p>
 <select class="input__select" name="authorization_renewal">
     <option value="" selected>- select -</option>
         <option value="0">No</option>
@@ -104,21 +115,21 @@
 <div class="form-container" style="background-color:white; padding:50pt">
 	<h1>Job Information</h1>
 	<p>Current Job Position *</p>
-	<input class="input__text" type="text" name="phone_number">
+	<input class="input__text" type="text" name="current_position0">
 	<br>
 	<br>
 	<p>Pay</p>
-	<input class="input__text" type="text" name="phone_number">
+	<input class="input__text" type="text" name="current_pay0">
 	<br>
 	<br>
 	<p>Start Date</p>
-	<input class="input__text" type="date">
+	<input name="start_date0" class="input__text" type="date">
 	<p>End Date</p>
-	<input class="input__text" type="date">
+	<input name="end_date0" class="input__text" type="date">
 	<br>
 	<br>
 	<p>Responsibilities *</p>
-	<textarea name="paragraph_text" cols="100" rows="10" style="width:80%;"></textarea>
+	<textarea name="respon0" cols="100" rows="10" style="width:80%;"></textarea>
 	<br>
 	<br>
 	<div id="container"></div>
@@ -126,13 +137,17 @@
 	<button class="btn btn-primary dropdown-toggle" id="jobButton" type="button">Add Work Experience</button>
 	<br>
 	<br>
-	<p>Skills</p>
-	<input class="input__text" type="text" name="phone_number" style="width:200pt;">
+	<p>Skills (Up to 5)</p>
+	<input class="input__text" type="text" name="skill0" style="width:200pt;">
 	<br>
 	<br>
 	<div id="Skillcontainer"></div>
 	<button class="btn btn-primary dropdown-toggle" id="removeSkill" type="button">Remove Skill</button>
 	<button class="btn btn-primary dropdown-toggle" id="addSkill" type="button">Add Skill</button>
+	<br>
+	<br>
+	<p>Any other information you would like to add:
+	<textarea name="paragraph_text" cols="90" rows="10"></textarea>
 </div>
 
 
@@ -147,7 +162,7 @@
 <p>Completion of the form is entirely voluntary. Whatever your decision, it will not be considered in the hiring process or thereafter. Any information that you do provide will be recorded and maintained in a confidential file.</p>
 <p>Candidates based outside of the United States should not answer the questions in this section.</p>
 <p>What is your gender? *</p>
-<select class="input__select" name="work_authorization">
+<select class="input__select" name="gender">
     <option value="" selected>- select -</option>
         <option value="0">Female</option>
         <option value="1">Male</option>
@@ -156,7 +171,7 @@
 <br>
 <br>
 <p>What is your race/ethnicity? *</p>
-<select class="input__select" name="work_authorization">
+<select class="input__select" name="race_ethnicity">
     <option value="" selected>- select -</option>
     <option value="1">American Indian or Alaskan Native</option>
         <option value="2">Asian</option>
@@ -179,7 +194,7 @@
 <br>
 <br>
 <p>Disability status *</p>
-<select class="input__select" name="veteran_status">
+<select class="input__select" name="disability">
         <option value="" selected>- select -</option>
         <option value="1">Yes, I have a disability (or previously had a disability)</option>
         <option value="2">No, I don&#39;t have a disability</option>
@@ -190,7 +205,7 @@
 <br>
 <br>
 <div class="save_container">
-<input class ="button input__submit" type="submit" value="Save changes"></input>
+<input name="save_changes" class ="button input__submit" type="submit" value="Save changes"></input>
 </div>
 <br>
 <br>
