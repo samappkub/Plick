@@ -5,7 +5,13 @@
   $password = "helloworld";//input password if any
   $dbname = "blawrenc_Users";//add the name of the specific database to connect to
 
-  $conn = mysqli_connect($servername, $username, $password);//create connection
+  $conn = mysqli_connect($servername, $username, $password, $dbname);//create connection
+
+  if(!$conn) {
+    echo "no connection";
+  } else {
+    echo "connection established";
+  }
 
   //function to create table
   function addUserTable($name) {
@@ -15,37 +21,36 @@
 
   //function to add to database
   function addUser($email, $pass) {
-    $ins_us_sql = "INSERT INTO users(email, passwd) VALUES($email, $pass)";
+    $ins_us_sql = "INSERT INTO Students(email, passwd) VALUES('$email', '$pass')";
     return mysqli_query($conn, $ins_us_sql);
   }
 
   function addJob($job, $tbl_name) {
-    $ins_jb_sql = "INSERT INTO $tbl_name jobs(name) VALUES($job)";
+    $ins_jb_sql = "INSERT INTO $tbl_name(name) VALUES($job)";
     return mysqli_query($conn, $ins_jb_sql);
   }
 
   //function to check if user exists
   function callUser($email, $pass) {
-    $sel_sql = "SELECT email, pass FROM users WHERE email = $email AND pass = $pass";
+    $sel_sql = "SELECT * FROM Students WHERE email = '$email' AND passwd = '$pass'";
     return mysqli_query($conn, $sel_sql);
-
   }
 
   //if the user clicks sign up
   function signUp() {
-    if(isset($_POST("signup"))) {
-      if(isset($_POST["email_sign"])) {
-          $email = mysqli_real_escape_string($conn, strip_tags($_POST["email_log"]));
+    if(isset($_POST('signup'))) {
+      if(isset($_POST['email_sign'])) {
+          $email = mysqli_real_escape_string($conn, strip_tags($_POST['email_log']));
       }
-      if(isset($_POST["pass_sign"])) {
-        $pass = mysqli_real_escape_string($conn, strip_tags($_POST["pass_log"]));
+      if(isset($_POST['pass_sign'])) {
+        $pass = mysqli_real_escape_string($conn, strip_tags($_POST['pass_log']));
       }
-      $ins_sql = "INSERT INTO users(email, passwd) VALUES('$email', '$pass')"
+      $ins_sql = "INSERT INTO Students(email, passwd) VALUES('$email', '$pass')"
       if(mysqli_query($conn, $ins_sql)) {
-        createUserTable();
+        createUserTable($email);
         ?>
         <script>
-          window.location = "" //put in the login file name
+          window.location = "HomePage.html"; //put in the login file name
         </script>
         <?php
       };
@@ -56,7 +61,13 @@
   function login() {
     if(isset($_POST["login"])) {
       if(isset($_POST["email_log"]) && isset($_POST["pass_log"])) {
-        bringUser($_POST["email_log"], $_POST["pass_log"]);
+        if(bringUser($_POST["email_log"], $_POST["pass_log"])) {
+            ?>
+            <script>
+              window.location = "HomePage.html";
+            </script>
+            <?php
+        }
       }
     }
   }
@@ -64,14 +75,12 @@
 //this is for loging out of the page
 //test if it works with the logout button
   function logOut() {
-    if(isset($_POST["logout"])) {
+    if(isset($_GET["logout"])) {
       session_start();
       unset($_SESSION['user']); // remove individual session var
       session_destroy();
-      header('location: login.php'); // redirct to certain page now
+      header('location: index.html'); // redirct to certain page now
     }
   }
-
-?>
 
 ?>
