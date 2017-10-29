@@ -1,17 +1,32 @@
 <?php
   //establish a connection to the database
-  $servername = "localhost";//input servername
-  $username = "blawrenc_Hack";//input username
-  $password = "helloworld";//input password if any
-  $dbname = "blawrenc_Users";//add the name of the specific database to connect to
-
-  $conn = mysqli_connect($servername, $username, $password, $dbname);//create connection
-
-  if(!$conn) {
-    echo "no connection";
-  } else {
-    echo "connection established";
+  try {
+  	$myPDO = new PDO('sqlite:Users.db');
+  	if($myPDO) {
+  		echo "connected established";
+  	}
+  } catch(PDOException $e) {
+  	echo "connection not established";
   }
+
+  //a few commands on that will be used
+  $cr_sql = "CREATE TABLE Jobs(id INTEGER PRIMARY KEY, company TEXT NOT NULL)";
+    $ins_sql = "INSERT INTO Jobs VALUES(1, 'Tesla')";
+    $ins1_sql = "INSERT INTO Jobs VALUES(2, 'Ben')";
+    $ins2_sql = "INSERT INTO Jobs VALUES(3, 'Sam')";
+    $myPDO->query($cr_sql);
+    $myPDO->query($ins_sql);
+    $myPDO->query($ins1_sql);
+    $myPDO->query($ins2_sql);
+    $sel_sql = "SELECT * FROM Jobs";
+    $stmt = $myPDO->query($sel_sql);
+
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    	echo $row['id'];
+  	echo $row['company'];
+    }
+
+
 
   //function to create table
   function addUserTable($name) {
