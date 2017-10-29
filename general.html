@@ -11,17 +11,31 @@
 
 	<script>
 	$(document).ready(function(){
-	$("#jobButton").click(function () {
-  $("#container").append('<div id="temp"><p>Current Job Position *</p><input class="input__text" type="text" name="current_position"><br><br><p>Pay *</p><input class="input__text" type="text" name="current_pay"><br><br><p>Responsibilities *</p><textarea name="responsibilities" cols="100" rows="10"></textarea><br><br></div>');
+	var jobCount=1;
+	var skillCount=1;
+
+		$("#jobButton").click(function () {
+			if (jobCount < 3) {
+				jobCount++;
+  	$("#container").append('<div id="temp"><p>Current Job Position *</p><input class="input__text" type="text" name="' + "current_position" + jobCount + '"><br><br><p>Pay *</p><input class="input__text" type="text" name="'+ "current_pay" + jobCount + '"><br><br><p>Start Date</p><input name="' + "start_date" + jobCount + '" class="input__text" type="date"><p>End Date</p><input name="' +"end_date"+jobCount+'" class="input__text" type="date"><br><br><p>Responsibilities *</p><textarea name="' + "respon" + jobCount + '" cols="100" rows="10"></textarea><br><br></div>');
+			}
 		});
 	$("#removeJob").click(function () {
 	$("#temp").remove();
+	if (jobCount > 1)
+		jobCount--;
 		});
 
 	$("#addSkill").click(function () {
-	$("#Skillcontainer").append('<div id="tempSkill"><p>Skills *</p><input style="width:200pt;" class="input__text" type="text" name="skills"><br><br></div>');
-		});
+	if (skillCount < 5) {
+		skillCount++;
+		$("#Skillcontainer").append('<div id="tempSkill"><p>Skills *</p><input style="width:200pt;" class="input__text" type="text" name="' + "skill" + skillCount + '"><br><br></div>');
+	}
+	});
+
 	$("#removeSkill").click(function () {
+		if (skillCount > 1)
+			skillCount--;
 	$("#tempSkill").remove();
 		});
 	});
@@ -88,7 +102,7 @@
 </select>
 <br>
 <br>
-<p>Will your current authorization require renewal by your emplyer? *</p>
+<p>Will your current authorization require renewal by your employer? *</p>
 <select class="input__select" name="authorization_renewal">
     <option value="" selected>- select -</option>
         <option value="0">No</option>
@@ -101,21 +115,21 @@
 <div class="form-container" style="background-color:white; padding:50pt">
 	<h1>Job Information</h1>
 	<p>Current Job Position *</p>
-	<input class="input__text" type="text" name="current_position">
+	<input class="input__text" type="text" name="current_position0">
 	<br>
 	<br>
 	<p>Pay</p>
-	<input class="input__text" type="text" name="current_pay">
+	<input class="input__text" type="text" name="current_pay0">
 	<br>
 	<br>
 	<p>Start Date</p>
-	<input name="start_date" class="input__text" type="date">
+	<input name="start_date0" class="input__text" type="date">
 	<p>End Date</p>
-	<input naem="end_date" class="input__text" type="date">
+	<input name="end_date0" class="input__text" type="date">
 	<br>
 	<br>
 	<p>Responsibilities *</p>
-	<textarea name="responsibilities" cols="100" rows="10" style="width:80%;"></textarea>
+	<textarea name="respon0" cols="100" rows="10" style="width:80%;"></textarea>
 	<br>
 	<br>
 	<div id="container"></div>
@@ -123,8 +137,8 @@
 	<button class="btn btn-primary dropdown-toggle" id="jobButton" type="button">Add Work Experience</button>
 	<br>
 	<br>
-	<p>Skills</p>
-	<input class="input__text" type="text" name="skills" style="width:200pt;">
+	<p>Skills (Up to 5)</p>
+	<input class="input__text" type="text" name="skill0" style="width:200pt;">
 	<br>
 	<br>
 	<div id="Skillcontainer"></div>
