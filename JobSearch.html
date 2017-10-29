@@ -35,23 +35,22 @@
       max-width: 1080px;
       width: 60%;
     }
-    #button {
-			line-height: 20px;
-			width: 20 pt;
-			font-family: tahoma;
-			margin-top: 1px;
-			margin-right: 2px;
-			position: absolute;
-			top: 0;
-			right: 0;
-			border-radius: 5pt;
-			background-color: #337ab7;
-			border: 0pt;
-			font-weight: bold;
-			font-size: 20 pt;
-			color:white;
-			padding: 10pt;
-    }
+		#button {
+		    line-height: 20px;
+		    width: 20 pt;
+		    font-family: tahoma;
+		    margin-top: 1px;
+		    margin-right: 2px;
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+				border-radius: 2pt;
+				background-color: #337ab7;
+				border: 0pt;
+				font-weight: bold;
+				font-size: 20 pt;
+				color:white;
+		}
   </style>
   <script>
   $(document).ready(function(){
@@ -86,7 +85,7 @@ What job do you want?
 
     <li>
     <div class="input-group-btn">
-        <button style="left:45%"class="btn btn-default" id="somebutton" name="addJob" type="submit">Add</button>
+        <button style="left:45%"class="btn btn-default" id="somebutton" onclick="window.alert('Your job specifications have been added to your My Plicks page.')"name="addJob" type="submit">Add</button>
     </div>
     </li>
   </ul>
