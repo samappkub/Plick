@@ -10,59 +10,42 @@
 	<script src="bootstrap.js"></script>
 
 
-  <style type="text/css">
- .topcorner{
+<style type="text/css">
+.topcorner{
    position:absolute;
    top:0;
    right:0;
-  }
-ul#menu li {
-    display:inline;
+}
+#largeButton{
+  padding: 10px 20px;
+  font-size: 60px;
+  border-radius: 10px;
+  width:100%;
+  background-color:#5b90e5
 }
 </style>
 
 </head>
 
 
-<body>
+<body style="background-color:#1557c1">
 
-<div class="topcorner">
-  <table style="padding:100px">
-    <tr>
-      <th>Account</th>
-    </tr>
-  </table>
+<div style="margin-top:20%">
+  <div class="text-center">
+  <ul class="list-inline">
+    <li><a href="general.html"><button class="btn btn-primary dropdown-toggle" id="largeButton" type="button">General</button></a></li>
+    <li>
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" id="largeButton" type="button" data-toggle="dropdown">My Plicks</button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Here is where you can see all of your Plicks. <br>Click on Job Search to get started on your first one!</a></li>
+      </ul>
+    </div>
+    </li>
+    <li><a href="JobSearch.html"><button id="largeButton" class="btn btn-primary dropdown-toggle" type="button">Job Search</button></a></li>
+  </ul>
+  </div>
 </div>
-
-<ul id="menu">
-  <li>
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">General</button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
-  </div>
-  </li>
-
-  <li>
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Plicks</button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Plick 1</a></li>
-      <li><a href="#">Plick 2</a></li>
-      <li><a href="#">Plick 3</a></li>
-    </ul>
-  </div>
-  </li>
-
-  <li>
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Job Search</button>
-  </div>
-  </li>
-</ul>
 
 </body>
 </html>

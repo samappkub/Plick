@@ -8,11 +8,41 @@
 	<script src="jquery.js"></script>
 	<script src="jquerycol.js"></script>
 	<script src="bootstrap.js"></script>
+
+  <style>
+    .mainQuestion{
+      color: #ffffff;
+      text-align: center;
+      font-size: 70 pt;
+      font-family:sans-serif;
+      font-weight: bold;
+      font-size: 400%;
+    }
+  </style>
 </head>
 
-<body>
+<body style="background-color:#1557c1">
 
+<div class="text-center" style="margin-top:1%">
+  <ul class="list-inline">
+    <li><a href="general.html"><button class="btn btn-primary dropdown-toggle" type="button">General</button></a></li>
+    <li>
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Plicks</button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Here is where you can see all of your Plicks. <br>Click on Job Search to get started on your first one!</a></li>
+      </ul>
+    </div>
+    </li>
+    <li><a href="JobSearch.html"><button class="btn btn-primary dropdown-toggle" type="button">Job Search</button></a></li>
+  </ul>
+</div>
+
+
+
+<div class="mainQuestion" style="margin-top:15%">
 What job do you want?
+</div>
 <div class="input-group">
     <input type="text" class="form-control" placeholder="Job Title, Keywords, or Company Name" name="srch-term" id="srch-term">
     <div class="input-group-btn">
