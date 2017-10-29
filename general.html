@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>General Info</title>
+	<title>General</title>
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="bootstrap.css">
 	<link rel="stylesheet" href="font-awesome.css">
 	<script src="jquery.js"></script>
 	<script src="jquerycol.js"></script>
 	<script src="bootstrap.js"></script>
+
+	<script>
+	$(document).ready(function(){}
+	$("#addJob").click(function () {
+  $("#container").append('<p>Previous Job Name</p><input class="input__text" type="text"><p>Base Compensation</p><input class="input__text" type="text"><br><br>');
+		});
+	});
+	</script>
+
+
+
+
 </head>
 <body style="background-color:#1557c1">
 <button name="logout" id="button">Logout</button>
@@ -15,19 +27,12 @@
 	<div class="text-center" style="margin-top:1%">
 	  <ul class="list-inline">
 	    <li><a href="general.html"><button class="btn btn-primary dropdown-toggle" type="button">General</button></a></li>
-	    <li>
-	    <div class="dropdown">
-	      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Plicks</button>
-	      <ul class="dropdown-menu">
-	        <li><a href="#">Here is where you can see all of your Plicks. <br>Click on Job Search to get started on your first one!</a></li>
-	      </ul>
-	    </div>
-	    </li>
+	    <li><a href="myPlicks.html"><button class="btn btn-primary dropdown-toggle" type="button">My Plicks</button></a></li>
 	    <li><a href="JobSearch.html"><button class="btn btn-primary dropdown-toggle" type="button">Job Search</button></a></li>
 	  </ul>
 	</div>
 
-<div class="form-container" style="background-color:#5b90e5; padding:5pt">
+<div class="form-container" style="background-color:white; padding:50pt">
 <h1> General Info </h1>
 <br>
 <p>First Name *</p>
@@ -46,6 +51,26 @@
 <input class="input__text" type="text" name="phone_number">
 <br>
 <br>
+<p>Country *</p>
+<input class="input__text" type="text" name="phone_number">
+<br>
+<br>
+<p>Address *</p>
+<input class="input__text" type="text" name="phone_number">
+<br>
+<br>
+<p>City *</p>
+<input class="input__text" type="text" name="phone_number">
+<br>
+<br>
+<p>State/Province *</p>
+<input class="input__text" type="text" name="phone_number">
+<br>
+<br>
+<p>Zip/Postal Code *</p>
+<input class="input__text" type="text" name="phone_number">
+<br>
+<br>
 <p>Are you currently authorized to work in the United States? *</p>
 <select class="input__select" name="work_authorization">
     <option value="" selected>- select -</option>
@@ -60,9 +85,10 @@
         <option value="0">No</option>
         <option value="1">Yes</option>
 </select>
+
 </div>
 <hr>
-<div class="form-container" style="background-color:#5b90e5; padding:5pt">
+<div class="form-container" style="background-color:white; padding:50pt">
 <h1>Equal Opportunity Self-Identification Form</h1>
 <h3>(Completion of this form is voluntary)</h3>
 <br>
@@ -125,6 +151,7 @@
     margin-right: auto;
     max-width: 1080px;
     width: 60%;
+		border-radius: 50px;
 }
 
 .form-required {
@@ -179,12 +206,18 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-		border-radius: 2pt;
+		border-radius: 5pt;
 		background-color: #337ab7;
 		border: 0pt;
 		font-weight: bold;
 		font-size: 20 pt;
 		color:white;
+		padding: 10pt;
+}
+.textBox{
+	width: 100 pt;
+	height: 50 pt;
+	border-radius: 5px;
 }
 </style>
 </html>

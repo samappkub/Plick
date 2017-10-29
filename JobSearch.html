@@ -21,6 +21,9 @@
     #searchBox{
       width: 50%;
       margin: 0 auto;
+			padding: 20pt 20pt 0pt 20pt;
+			background-color: white;
+			border-radius: 20px;
     }
     .searchResults{
       width: 70%;
@@ -33,20 +36,21 @@
       width: 60%;
     }
     #button {
-        line-height: 20px;
-        width: 20 pt;
-        font-family: tahoma;
-        margin-top: 1px;
-        margin-right: 2px;
-        position: absolute;
-        top: 0;
-        right: 0;
-    		border-radius: 2pt;
-    		background-color: #337ab7;
-    		border: 0pt;
-    		font-weight: bold;
-    		font-size: 20 pt;
-    		color:white;
+			line-height: 20px;
+			width: 20 pt;
+			font-family: tahoma;
+			margin-top: 1px;
+			margin-right: 2px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			border-radius: 5pt;
+			background-color: #337ab7;
+			border: 0pt;
+			font-weight: bold;
+			font-size: 20 pt;
+			color:white;
+			padding: 10pt;
     }
   </style>
   <script>
@@ -65,14 +69,7 @@
 <div class="text-center" style="margin-top:1%">
   <ul class="list-inline">
     <li><a href="general.html"><button class="btn btn-primary dropdown-toggle" type="button">General</button></a></li>
-    <li>
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Plicks</button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Here is where you can see all of your Plicks. <br>Click on Job Search to get started on your first one!</a></li>
-      </ul>
-    </div>
-    </li>
+    <li><a href="myPlicks.html"><button class="btn btn-primary dropdown-toggle" type="button">My Plicks</button></a></li>
     <li><a href="JobSearch.html"><button class="btn btn-primary dropdown-toggle" type="button">Job Search</button></a></li>
   </ul>
 </div>
@@ -83,13 +80,13 @@
 What job do you want?
 </div>
 <div class="input-group" id="searchBox">
-  <ul style="list-style: none;">
+  <ul style="list-style: none; padding-left: 0; list-style-type:none;">
     <li><input type="text" class="form-control" placeholder="Job Title, Keywords, or Company Name" name="srch-term" id="srch-term"></li>
     <li><input type="text" class="form-control" placeholder="Location (or hit search to see jobs anywhere)" name="srch-term" id="srch-term"></li>
 
     <li>
     <div class="input-group-btn">
-        <button style="left:45%"class="btn btn-default" id="somebutton" type="submit">Add</button>
+        <button style="left:45%"class="btn btn-default" id="somebutton" name="addJob" type="submit">Add</button>
     </div>
     </li>
   </ul>
