@@ -22,7 +22,26 @@
       width: 50%;
       margin: 0 auto;
     }
+    .searchResults{
+      width: 70%;
+      background-color: #746171;
+      height: 100%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1080px;
+      width: 60%;
+    }
   </style>
+  <script>
+  $(document).ready(function(){
+    $("#somebutton").click(function () {
+      $("#container").append('<div class="searchResults">hello?</div>');
+    });
+  })
+
+  </script>
+
 </head>
 
 <body style="background-color:#1557c1">
@@ -54,7 +73,7 @@ What job do you want?
 
     <li>
     <div class="input-group-btn">
-        <button style="left:45%"class="btn btn-default" type="submit">Search</button>
+        <button style="left:45%"class="btn btn-default" id="somebutton" type="submit">Add</button>
     </div>
     </li>
   </ul>
