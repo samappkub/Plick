@@ -20,6 +20,7 @@
     }
     #searchBox{
       width: 50%;
+      margin: 0 auto;
     }
   </style>
 </head>
@@ -47,10 +48,16 @@
 What job do you want?
 </div>
 <div class="input-group" id="searchBox">
-    <input type="text" class="form-control" placeholder="Job Title, Keywords, or Company Name" name="srch-term" id="srch-term">
+  <ul style="list-style: none;">
+    <li><input type="text" class="form-control" placeholder="Job Title, Keywords, or Company Name" name="srch-term" id="srch-term"></li>
+    <li><input type="text" class="form-control" placeholder="Location (or hit search to see jobs anywhere)" name="srch-term" id="srch-term"></li>
+
+    <li>
     <div class="input-group-btn">
-        <button class="btn btn-default" type="submit">Search</button>
+        <button style="left:45%"class="btn btn-default" type="submit">Search</button>
     </div>
+    </li>
+  </ul>
 </div>
 
 </body>
