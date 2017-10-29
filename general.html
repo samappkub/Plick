@@ -12,14 +12,14 @@
 	<script>
 	$(document).ready(function(){
 	$("#jobButton").click(function () {
-  $("#container").append('<div id="temp"><p>Current Job Position *</p><input class="input__text" type="text" name="phone_number"><br><br><p>Pay *</p><input class="input__text" type="text" name="phone_number"><br><br><p>Responsibilities *</p><textarea name="paragraph_text" cols="100" rows="10"></textarea><br><br></div>');
+  $("#container").append('<div id="temp"><p>Current Job Position *</p><input class="input__text" type="text" name="current_position"><br><br><p>Pay *</p><input class="input__text" type="text" name="current_pay"><br><br><p>Responsibilities *</p><textarea name="responsibilities" cols="100" rows="10"></textarea><br><br></div>');
 		});
 	$("#removeJob").click(function () {
 	$("#temp").remove();
 		});
 
 	$("#addSkill").click(function () {
-	$("#Skillcontainer").append('<div id="tempSkill"><p>Skills *</p><input style="width:200pt;" class="input__text" type="text" name="phone_number"><br><br></div>');
+	$("#Skillcontainer").append('<div id="tempSkill"><p>Skills *</p><input style="width:200pt;" class="input__text" type="text" name="skills"><br><br></div>');
 		});
 	$("#removeSkill").click(function () {
 	$("#tempSkill").remove();
@@ -53,7 +53,7 @@
 <br>
 <br>
 <p>Email *</p>
-<input class="input__text" type="text" name="email">
+<input class="input__text" type="text" name="email"> <!-- will be autopulated-->
 <br>
 <br>
 <p>Phone *</p>
@@ -61,23 +61,23 @@
 <br>
 <br>
 <p>Country *</p>
-<input class="input__text" type="text" name="phone_number">
+<input class="input__text" type="text" name="country">
 <br>
 <br>
 <p>Address *</p>
-<input class="input__text" type="text" name="phone_number">
+<input class="input__text" type="text" name="address">
 <br>
 <br>
 <p>City *</p>
-<input class="input__text" type="text" name="phone_number">
+<input class="input__text" type="text" name="city">
 <br>
 <br>
 <p>State/Province *</p>
-<input class="input__text" type="text" name="phone_number">
+<input class="input__text" type="text" name="state">
 <br>
 <br>
 <p>Zip/Postal Code *</p>
-<input class="input__text" type="text" name="phone_number">
+<input class="input__text" type="text" name="postal_code">
 <br>
 <br>
 <p>Are you currently authorized to work in the United States? *</p>
@@ -101,21 +101,21 @@
 <div class="form-container" style="background-color:white; padding:50pt">
 	<h1>Job Information</h1>
 	<p>Current Job Position *</p>
-	<input class="input__text" type="text" name="phone_number">
+	<input class="input__text" type="text" name="current_position">
 	<br>
 	<br>
 	<p>Pay</p>
-	<input class="input__text" type="text" name="phone_number">
+	<input class="input__text" type="text" name="current_pay">
 	<br>
 	<br>
 	<p>Start Date</p>
-	<input class="input__text" type="date">
+	<input name="start_date" class="input__text" type="date">
 	<p>End Date</p>
-	<input class="input__text" type="date">
+	<input naem="end_date" class="input__text" type="date">
 	<br>
 	<br>
 	<p>Responsibilities *</p>
-	<textarea name="paragraph_text" cols="100" rows="10" style="width:80%;"></textarea>
+	<textarea name="responsibilities" cols="100" rows="10" style="width:80%;"></textarea>
 	<br>
 	<br>
 	<div id="container"></div>
@@ -124,7 +124,7 @@
 	<br>
 	<br>
 	<p>Skills</p>
-	<input class="input__text" type="text" name="phone_number" style="width:200pt;">
+	<input class="input__text" type="text" name="skills" style="width:200pt;">
 	<br>
 	<br>
 	<div id="Skillcontainer"></div>
@@ -148,7 +148,7 @@
 <p>Completion of the form is entirely voluntary. Whatever your decision, it will not be considered in the hiring process or thereafter. Any information that you do provide will be recorded and maintained in a confidential file.</p>
 <p>Candidates based outside of the United States should not answer the questions in this section.</p>
 <p>What is your gender? *</p>
-<select class="input__select" name="work_authorization">
+<select class="input__select" name="gender">
     <option value="" selected>- select -</option>
         <option value="0">Female</option>
         <option value="1">Male</option>
@@ -157,7 +157,7 @@
 <br>
 <br>
 <p>What is your race/ethnicity? *</p>
-<select class="input__select" name="work_authorization">
+<select class="input__select" name="race_ethnicity">
     <option value="" selected>- select -</option>
     <option value="1">American Indian or Alaskan Native</option>
         <option value="2">Asian</option>
@@ -180,7 +180,7 @@
 <br>
 <br>
 <p>Disability status *</p>
-<select class="input__select" name="veteran_status">
+<select class="input__select" name="disability">
         <option value="" selected>- select -</option>
         <option value="1">Yes, I have a disability (or previously had a disability)</option>
         <option value="2">No, I don&#39;t have a disability</option>
@@ -191,7 +191,7 @@
 <br>
 <br>
 <div class="save_container">
-<input class ="button input__submit" type="submit" value="Save changes"></input>
+<input name="save_changes" class ="button input__submit" type="submit" value="Save changes"></input>
 </div>
 <br>
 <br>
