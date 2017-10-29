@@ -2,23 +2,31 @@
 <html>
 <head>
 	<title>Plick</title>
-	<link rel="stylesheet" href="styles.css">
+
 	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="font-awesome.css">
 	<script src="jquery.js"></script>
 	<script src="jquerycol.js"></script>
 	<script src="bootstrap.js"></script>
 </head>
-<body>	
+<body>
+
+	<!--php section to move to homepage after login is clicked-->
+
 	<!--create a static background image for the nav and first div-->
 	<!--float nav and first div on a div with a static bckgrnd image-->
 	<!--Page Navigation Header-->
 
-	<nav>
-		<div>
-			PLICK
+	<nav class="navbar navbar-inverse head">
+		<div class="navbar-header">
+			<a href="#" class="navbar-brand">PLICK</a>
 		</div>
-		<ul>
+		<ul class="nav navbar-nav">
+			<li><a href="#">Plan Ahead</a></li>
+			<li><a href="#">Explore Companies</a></li>
+			<li><a href="#">Getting Started</a></li>
+			<li><a href="#">Apply Now</a></li>
 			<li><a href="#" data-toggle="modal" data-target="#signModal"><span><i class="fa fa-user" aria-hidden="true"></i></span> Sign Up</a></li>
 			<li><a href="#" data-toggle="modal" data-target="#loginModal"><span><i class="fa fa-user" aria-hidden="true"></i></span> Log In</a></li>
 		</ul>
@@ -32,15 +40,15 @@
         				<button type="button" class="close" data-dismiss="modal">&times;</button>
       				</div>
       				<div class="modal-body">
-       				<form action="" method="post">
+       				<form action="mainphp.php" method="post">
 						<div class="group">
-							<input type="email" name="" class="form-control" placeholder="Email Address" required>
+							<input type="email" name="email_log" class="form-control" placeholder="Email Address" required>
 						</div>
 						<div class="group">
-							<input type="password" name="" class="form-control" placeholder="Password" required>
+							<input type="password" name="pass_log" class="form-control" placeholder="Password" required>
 						</div>
 						<div class="group">
-							<input id="logbtn" name="" type="button" class="btn btn-primary btn-md btn-block" value="Register">
+							<input id="logbtn" name="login" type="button" class="btn btn-primary btn-md btn-block" value="Register">
 						</div>
      				</form>
       				</div>
@@ -63,13 +71,13 @@
       				<div class="modal-body">
        				<form action="" method="post">
 						<div class="group">
-							<input type="email" name="" class="form-control" placeholder="Email Address" required>
+							<input type="email" name="email_sign" class="form-control" placeholder="Email Address" required>
 						</div>
 						<div class="group">
-							<input type="password" name="" class="form-control" placeholder="Password" required>
+							<input type="password" name="pass_sign" class="form-control" placeholder="Password" required>
 						</div>
 						<div class="group">
-							<input id="sigbtn" name="" type="button" class="btn btn-primary btn-md btn-block" value="Register">
+							<input id="sigbtn" name="signup" type="button" class="btn btn-primary btn-md btn-block" value="Register">
 						</div>
      				</form>
       				</div>
@@ -80,12 +88,8 @@
     		</div>
     	</div>
 
-		<ul>
-			<li>Plan Ahead</li>
-			<li>Explore Companies</li>
-			<li>Getting Started</li>
-			<li>Apply Now</li>
-		</ul>
+
+
 	</nav>
 
 	<!--Info box in the middle of the screen-->
@@ -188,7 +192,7 @@
 		<div class="clearfix"></div>
 		<div style="text-align: center;">
 			Copyright &copy; | All Rights Reserved | 2017
-		</div>			
+		</div>
 	</div>
 
 </body>
